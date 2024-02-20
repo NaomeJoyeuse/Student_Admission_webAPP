@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+    <welcome-file-list>
+        <welcome-file>Home.jsp</welcome-file>
+    </welcome-file-list>
+
+    <filter>
+        <filter-name> authentication_Filter</filter-name>
+        <filter-class>com.example.admissionweb.FilterAuth</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>authentication_Filter</filter-name>
+        <url-pattern>/newStudent.jsp</url-pattern>
+        <url-pattern>/Admissionsdata.jsp</url-pattern>
+        </filter-mapping>
+
+
+    <servlet>
+        <servlet-name>studentServlet</servlet-name>
+        <servlet-class>com.example.admissionweb.studentServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>studentServlet</servlet-name>
+        <url-pattern>/studentServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
